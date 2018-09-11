@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="./css/base.css">
+  <style>
+    .outerbox {
+      font-size: 14px;
+    }
+    
+    .slidebtn {
+      display: inline-block;
+      padding: 10px 40px 10px 10px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      background: url(./images/down.png) no-repeat 130px center;
+      background-size: 24px 10px;
+    }
+    
+    .slidebtn.active {
+      background: url(./images/up.png) no-repeat 130px center;
+      background-size: 24px 10px;
+    }
+    
+    .slidebottom {
+      display: none;
+      width: 650px;
+      box-sizing: border-box;
+      padding: 10px;
+    }
+    
+    .slidebottom label {
+      display: inline-block;
+      width: 100px;
+      text-align: right;
+      margin-top: 10px;
+    }
+    
+    .slidebottom input[type="text"] {
+      width: 200px;
+      margin-top: 10px;
+    }
+    
+    .pay_list_c1 {
+      background-position: left center;
+    }
+    
+    .pay_list_c1.on {
+      background-position: left center;
+    }
+  
+  </style>
+</head>
+<body>
+
+<div class="outerbox">
+  <span class="slidebtn">点击展开客户信息</span>
+  <form class="slidebottom">
+    <label for="name">客户姓名</label>
+    <input type="text" id="name"><span style="display:inline-block;color:red;">*</span>
+    
+    <label for="time">接入日期</label>
+    <input type="text" id="time">
+    
+    <label for="path">来源渠道</label>
+    <input type="text" id="path"><span style="display:inline-block;color:red;">*</span>
+    
+    <label for="company">合作伙伴</label>
+    <select name="" id="company">
+      <option value="">1</option>
+      <option value="">2</option>
+      <option value="">3</option>
+      <option value="">4</option>
+    </select>
+    
+    <label for="birth">生日</label>
+    <input type="text" id="birth">
+    
+    <label>客户性别</label>
+    <span class="pay_list_c1 on"><input type="radio" name="gender" value="sec">保密</span>
+    <span class="pay_list_c1"><input type="radio" name="gender" value="male">男</span>
+    <span class="pay_list_c1"><input type="radio" name="gender" value="female">女</span>
+    
+    <label for="province">省份</label>
+    <input type="text" id="province">
+    
+    <label for="wechat">微信账号</label>
+    <input type="text" id="wechat">
+  
+    <label for="iswechat">是否添加微信</label>
+    <input name="" value="yes" type="checkbox" checked="" style="width: 30px;opacity:1;">
+   
+    
+  </form>
+</div>
+
+
+<script src="./lib/jquery.min.js"></script>
+<script>
+  //下拉上拉
+  $('.outerbox .slidebtn').on('click', function () {
+    if ($(this).text() == "点击展开客户信息") {
+      $(this).text("点击隐藏客户信息")
+    } else if ($(this).text() == "点击隐藏客户信息") {
+      $(this).text("点击展开客户信息")
+    }
+    $('.slidebtn').toggleClass('active')
+    $('.slidebottom').slideToggle()
+  })
+  
+  //客户性别单选
+  $('.pay_list_c1').on('click', function () {
+    $(this).addClass('on')
+  })
+
+</script>
+
+</body>
+</html>

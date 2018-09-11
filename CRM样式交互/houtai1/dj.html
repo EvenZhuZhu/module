@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/houtai.css">
+</head>
+<body>
+
+<form id="search-form" action="/txt/zyoutdata" method="post">
+  <span>统计时段：</span>
+  <input type="text" id="w0" class="input-sm dfinput" name="start" value="2018-03-01" readonly="readonly">
+  <i>---</i>
+  <input type="text" id="w1" class="input-sm dfinput" name="end" value="2018-03-12" readonly="readonly">
+  <input type="submit" value="确定" class="color">
+</form>
+
+<table>
+  <tr>
+    <th class="list">序号</th>
+    <th class="phone">手机</th>
+    <th class="wx">微信</th>
+    <th class="qq">QQ</th>
+    <th class="time">接入时间</th>
+    <th class="datanum">共 <span>1000</span> 条数据  </th>
+  </tr>
+  <tr>
+    <td class="list">123</td>
+    <td class="phone">13472771536</td>
+    <td class="wx">416354654</td>
+    <td class="qq">112478566</td>
+    <td class="time">2018-12-14 09:55:42</td>
+    <td class="datanum"></td>
+  </tr>
+  <tr>
+    <td class="list">123</td>
+    <td class="phone">13472771536</td>
+    <td class="wx">416354654</td>
+    <td class="qq">112478566</td>
+    <td class="time">2018-12-14 09:55:42</td>
+    <td class="datanum"></td>
+  </tr>
+  <tr>
+    <td class="list">123</td>
+    <td class="phone">13472771536</td>
+    <td class="wx">416354654</td>
+    <td class="qq">112478566</td>
+    <td class="time">2018-12-14 09:55:42</td>
+    <td class="datanum"></td>
+  </tr>
+</table>
+
+<div class="page">
+  <div class="pagin">
+    <ul class="clearfix btsBut"><li class="首页 disabled"><span>首页</span></li>
+      <li class="prev disabled"><span>上一页</span></li>
+      <li class="currentLi"><a class="color" href="javascript:void(0);" onclick="pageurl($(this),1);">1</a></li>
+      <li><a href="javascript:void(0);" onclick="pageurl($(this),2);">2</a></li>
+      <li><a href="javascript:void(0);" onclick="pageurl($(this),3);">3</a></li>
+      <li><a href="javascript:void(0);" onclick="pageurl($(this),4);">4</a></li>
+      <li><a href="javascript:void(0);" onclick="pageurl($(this),5);">5</a></li>
+      <li><a href="javascript:void(0);" onclick="pageurl($(this),6);">6</a></li>
+      <li><a href="javascript:void(0);" onclick="pageurl($(this),7);">7</a></li>
+      <li class="next"><a href="javascript:void(0);" onclick="pageurl($(this),2);">下一页</a></li>
+      <li class="尾页"><a href="javascript:void(0);" onclick="pageurl($(this),8166);">末页</a></li>
+      <li class="page-number">共 8166 页</li><li class="tiaoye">&nbsp;到第&nbsp;<input style="width:40px !important;height:25px; border: 1px solid #cccccc;text-align:center;" type="text" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" value="" class="number" id="redirpage_data">&nbsp;页</li><li><a style="cursor: pointer;" href="javascript:void(0);" onclick="pageurl_dir()" class="page_to_yes">确定</a></li></ul>
+  </div>
+</div>
+
+<script src="./lib/jquery.min.js"></script>
+<script src="./js/houtai.js"></script>
+
+</body>
+</html>

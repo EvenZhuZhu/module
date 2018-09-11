@@ -1,0 +1,70 @@
+#search-form {
+  height: 60px;
+  font-size: 14px;
+  padding-top: 20px;
+}
+
+#search-form span {
+  font-weight: bold;
+}
+
+#search-form #w0, #w1 {
+  outline: none;
+  width: 100px;
+  height: 24px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#search-form i {
+  font-weight: bold;
+}
+
+#search-form .color {
+  margin-left: 10px;
+  border-radius: 4px;
+  width: 60px;
+  height: 26px;
+  color: #fff;
+  background-color: dodgerblue;
+  outline: none;
+  border: none;
+}
+
+table {
+  border: none;
+}
+
+table tr {
+  border: none;
+}
+
+table tr th {
+  background-color: rgba(242, 242, 242, 1);
+  font-weight: bold;
+  fon-size: 40px;
+}
+
+table tr th, table tr td {
+  text-align: center;
+  height: 50px;
+  border: none;
+}
+
+table tr td {
+  border-bottom:1px solid rgba(242, 242, 242, 1);
+}
+
+.list {
+  width: 200px;
+}
+
+.phone, .wx, .qq, .time {
+  width: 400px;
+}
+
+th.datanum {
+  width: 500px;
+  text-indent: 80px;
+}

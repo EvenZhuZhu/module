@@ -1,0 +1,242 @@
+body {
+  min-width: 1400px;
+  max-width: 1400px;
+}
+
+h1 {
+  font-size: 26px;
+  height: 60px;
+  line-height: 60px;
+}
+
+#search-form {
+  height: 60px;
+  font-size: 14px;
+  padding-top: 20px;
+  border-bottom: 1px solid #000;
+}
+
+#search-form span {
+  font-weight: bold;
+}
+
+#search-form #w0, #w1 {
+  outline: none;
+  width: 100px;
+  height: 24px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#search-form #w1 {
+  margin-right: 20px;
+}
+
+#search-form i {
+  font-weight: bold;
+}
+
+#search-form .color {
+  margin-left: 10px;
+  border-radius: 4px;
+  width: 60px;
+  height: 26px;
+  color: #fff;
+  background-color: dodgerblue;
+  outline: none;
+  border: none;
+  vertical-align: top;
+}
+
+input.phone {
+  width: 160px;
+  text-align: center;
+}
+
+select {
+  -webkit-appearance: menulist;
+  margin-right: 60px;
+  width: 140px;
+}
+
+p.jlzts {
+  height: 40px;
+  line-height: 40px;
+  text-align: right;
+  box-sizing: border-box;
+}
+
+table {
+  border: none;
+}
+
+table tr {
+  width: 100%;
+  border: none;
+}
+
+table tr th {
+  width: 8.33%;
+  background-color: rgba(242, 242, 242, 1);
+  font-weight: bold;
+  font-size: 44px;
+  height: 100px;
+}
+
+table tr th, table tr td {
+  text-align: center;
+  height: 50px;
+  border: none;
+}
+
+table tr td {
+  border-bottom: 1px solid rgba(200, 200, 200, 1);
+}
+
+
+
+
+
+
+
+
+.fpdc {
+  position: relative;
+  height: 40px;
+}
+
+.fp, .dc {
+  position: absolute;
+  border: 1px solid rgba(200, 200, 200, 1);
+  padding: 0 8px;
+  top:10px;
+  right:10px;
+}
+
+.fp {
+  right:80px;
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-color: #000;
+  border: 1px solid #000;
+  opacity: 1;
+}
+
+.mask {
+  display: none;
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background-color: rgba(0,0,0,0.3);
+}
+
+.mask .box {
+  padding:10px 30px;
+  box-sizing: border-box;
+  width: 800px;
+  height: 260px;
+  background-color: #fff;
+  border-radius:6px;
+  margin:300px auto;
+  position: relative;
+}
+
+.mask .box .top {
+  height: 60px;
+  line-height: 60px;
+  border-bottom: 1px solid rgba(200, 200, 200, 1);
+  font-size:26px;
+}
+
+.mask .box .bott {
+  height: 60px;
+  line-height: 60px;
+}
+
+.mask .box input {
+  opacity: 1;
+}
+
+.mask .box label {
+  margin-right:30px;
+}
+
+.mask .box button {
+  width: 100px;
+  height: 36px;
+  position: absolute;
+  bottom:30px;
+  right:30px;
+  background-color: #fff;
+  border:1px solid rgba(200, 200, 200, 1);
+  border-radius: 6px;
+  outline: none;
+}
+
+.mask .box .close{
+  position: absolute;
+  top:30px;
+  right:30px;
+  width: 15px;
+  height: 15px;
+  background: url("../img/u288.png") no-repeat center center;
+  background-size:15px 15px;
+}
+
+.mask1 {
+  display: none;
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background-color: rgba(0,0,0,0.3);
+}
+
+.mask1 .box {
+  padding:10px 30px;
+  box-sizing: border-box;
+  width: 800px;
+  height: 260px;
+  background-color: #fff;
+  border-radius:6px;
+  margin:300px auto;
+  position: relative;
+}
+
+.mask1 .box .top {
+  height: 60px;
+  line-height: 60px;
+  border-bottom: 1px solid rgba(200, 200, 200, 1);
+  font-size:26px;
+  margin-bottom:30px;
+}
+
+.mask1 .box button {
+  width: 100px;
+  height: 36px;
+  position: absolute;
+  bottom:30px;
+  right:30px;
+  background-color: #fff;
+  border:1px solid rgba(200, 200, 200, 1);
+  border-radius: 6px;
+  outline: none;
+}
+
+.mask1 .box .close{
+  position: absolute;
+  top:30px;
+  right:30px;
+  width: 15px;
+  height: 15px;
+  background: url("../img/u288.png") no-repeat center center;
+  background-size:15px 15px;
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./chart.css">
+</head>
+<body>
+
+<div class="mycart">
+  <div class="checkout-steps">
+    <div class="step-tit" style="padding-top: 26px">
+      <h3>选择收货地址</h3>
+      <div class="extra-r">
+        <a class="ftx-05" onclick="AddressEdit(0);" style="cursor: pointer;">新增收货地址</a>
+      </div>
+    </div>
+    <div class="step-cont">
+      <div class="consignee-scroll">
+        <div class="consignee-cont">
+          <ul id="addressList">
+            <li id="address-i-0" class="">
+              <div class="consignee-item item-selected" onclick="setDefaultAdd('3')">
+                <span title="2222">2222</span><b></b>
+              </div>
+              <div class="addr-detail">
+                <span class="addr-name" title="2222">2222</span>
+                <span class="addr-info" title="河北省 唐山市 1213213">河北省 唐山市 1213213</span>
+                <span class="addr-tel">15906460052</span>
+              </div>
+              <span class="addr">默认地址</span>
+              <div class="op-btns">
+                <a onclick="setDefaultAdd('3')" class="ftx-05 setdefault-consignee" style="cursor: pointer;">设为默认地址</a>
+                <a onclick="addEdit('3','2222','河北省 唐山市','1213213','15906460052','1');" class="ftx-05 edit-consignee"
+                   style="cursor: pointer;">编辑</a>
+                <a onclick="addDelete('3')" class="ftx-05 del-consignee" style="cursor: pointer;">删除</a>
+              </div>
+            </li>
+            <li id="address-i-1" class="">
+              <div class="consignee-item " onclick="setDefaultAdd('1')">
+                <span title="1111">1111</span><b></b>
+              </div>
+              <div class="addr-detail">
+                <span class="addr-name" title="1111">1111</span>
+                <span class="addr-info" title="河北省 秦皇岛市 1111">河北省 秦皇岛市 1111</span>
+                <span class="addr-tel">15906460052</span>
+              </div>
+              <div class="op-btns">
+                <a onclick="setDefaultAdd('1')" class="ftx-05 setdefault-consignee" style="cursor: pointer;">设为默认地址</a>
+                <a onclick="addEdit('1','1111','河北省 秦皇岛市','1111','15906460052','0');" class="ftx-05 edit-consignee"
+                   style="cursor: pointer;">编辑</a>
+                <a onclick="addDelete('1')" class="ftx-05 del-consignee" style="cursor: pointer;">删除</a>
+              </div>
+            </li>
+            <li id="address-i-2" class="">
+              <div class="consignee-item " onclick="setDefaultAdd('2')">
+                <span title="11111">11111</span><b></b>
+              </div>
+              <div class="addr-detail">
+                <span class="addr-name" title="11111">11111</span>
+                <span class="addr-info" title="吉林省 四平市 1111111">吉林省 四平市 1111111</span>
+                <span class="addr-tel">15906460052</span>
+              </div>
+              <div class="op-btns">
+                <a onclick="setDefaultAdd('2')" class="ftx-05 setdefault-consignee" style="cursor: pointer;">设为默认地址</a>
+                <a onclick="addEdit('2','11111','吉林省 四平市','1111111','15906460052','0');" class="ftx-05 edit-consignee"
+                   style="cursor: pointer;">编辑</a>
+                <a onclick="addDelete('2')" class="ftx-05 del-consignee" style="cursor: pointer;">删除</a>
+              </div>
+            </li>
+            <li id="address-i-3" style="display:none;" class="addnone">
+              <div class="consignee-item " onclick="setDefaultAdd('0')">
+                <span title="测试">测试</span><b></b>
+              </div>
+              <div class="addr-detail">
+                <span class="addr-name" title="测试">测试</span>
+                <span class="addr-info" title="上海市 上海市 测试测试1111">上海市 上海市 测试测试1111</span>
+                <span class="addr-tel">15906460052</span>
+              </div>
+              <div class="op-btns">
+                <a onclick="setDefaultAdd('0')" class="ftx-05 setdefault-consignee" style="cursor: pointer;">设为默认地址</a>
+                <a onclick="addEdit('0','测试','上海市 上海市','测试测试1111','15906460052','0');" class="ftx-05 edit-consignee"
+                   style="cursor: pointer;">编辑</a>
+                <a onclick="addDelete('0')" class="ftx-05 del-consignee" style="cursor: pointer;">删除</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="step-tit">
+      <h3>订单信息</h3>
+    </div>
+    
+    <table width="100%" class="cart_list2" style="background-color:#fff;">
+      <tbody>
+      <tr style="border:1px solid #dbdbdb;background-color:#f3f3f3;height: 42px;">
+        <th width=60% style="text-indent: 120px;">商标信息</th>
+        <th width=20% style="text-align: center;">商标状态</th>
+        <th width=20% style="text-align: center;">价格</th>
+      </tr>
+     <tr style="height:12px;"></tr>
+      <tr id="c_P1_74465_201808101455493640048_0" class="cart_sb_id" style="border: 1px solid #dbdbdb;background-color: #fbfbfb;">
+        <td style="padding-left:20px;">
+          <div class="thumb_name">
+            <dl>
+              <dt><a href="/info-624169.html" target="_blank"><img
+                  src="http://pic.86sb.com/uploads/Brand_sb/2397995712.jpg?1@!jxd" border="0"></a></dt>
+              <dd><a href="/info-624169.html" target="_blank" class="f6"><strong style="color: #0e0e0d;">汉尊</strong></a>
+                <ul class="attrname clearfix">
+                  <li style="color: #666;">商标分类:第12类 运输工具</li>
+                  <li style="color: #666;">商标编号:R120023979957m</li>
+                  <li style="color: #666;">商标类型:
+                    中文
+                  </li>
+                  <li style="color: #666;">交易类型:商标转让</li>
+                  <li style="color: #666;">描述:特价商标</li>
+                  <li class="last">
+                    适用范围:地方两个两件事管局的法国进口额日益噢热IT业热偶通过个电饭锅电饭锅电饭锅个电饭锅电饭锅电饭锅电饭锅电饭锅电饭锅电饭锅浮动鬼地方给对方让他与具体意义地方两个两件事管局的法国进口额日益噢热IT业热偶通过个电饭锅电饭锅电饭锅个电饭锅电饭锅电饭锅电饭锅电饭锅电饭锅电饭锅浮动鬼地方给对方让他与具体意义
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </div>
+        </td>
+        <td align="center">未售出</td>
+        <td align="center" style="color:#c80101;font-weight:700;">¥9998</td>
+      </tr>
+      </tbody>
+    </table>
+    
+    <table cellpadding="0" cellspacing="0" width="100%" border="0" class="price">
+      <tbody>
+      <tr style="height: 80px;">
+        <td width="88%" align="right"><span>总价:</span><strong id="totalPrice"
+                                                  style="color: #c80101;font: 700 26px tahoma;">￥9998</strong><span style="color:#e09f08;">（此价格不包含规费和公证费）</span>
+        </td>
+        <td width="12%" align="right"><a href="javascript:submitOrder();" class="jmcheckout">立即支付</a></td>
+      </tr>
+      </tbody>
+    </table>
+  
+    <img src="./images/pic.png" alt="">
+  </div>
+</div>
+
+</body>
+</html>

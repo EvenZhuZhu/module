@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>优选商标 就找尚标</title>
+  <link rel="stylesheet" href="./lib/swiper-3.4.2.min.css">
+  <style>
+    .bxx {
+      width: 1180px;
+      margin: 30px auto;
+    }
+    
+    a {
+      text-decoration: none;
+      color: #565656;
+    }
+    
+    .sele {
+      height: 75px;
+    }
+    
+    .sele em {
+      width: 3px;
+      height: 22px;
+      display: inline-block;
+      background-color: #c80101;
+      vertical-align: -4px;
+      margin-right: 10px;
+    }
+    
+    .sele h2 {
+      display: inline-block;
+      font: 22px '微软雅黑';
+      font-weight: 500;
+    }
+    
+    .outer .left {
+      width: 345px;
+      height: 250px;
+      background-color: #f4e5d3;
+      display: inline-block;
+    }
+    
+    .outer .left span, .outer .left a {
+      display: inline-block;
+      float: left;
+      width: 33.33%;
+      height: 50%;
+      box-sizing: border-box;
+      text-align: center;
+      font: 16px '微软雅黑';
+    }
+    
+    .outer .left span {
+      padding-top: 40px;
+      position: relative;
+      color: #565656;
+      cursor: pointer;
+    }
+    
+    .outer .left span.active {
+      background-color: #f1eae1;
+      color: #f6463c;
+    }
+    
+    .outer .left span::after {
+      content: "";
+      width: 2px;
+      height: 100px;
+      position: absolute;
+      top: 10px;
+      right: 0;
+      background: #fff;
+    }
+    
+    .outer .left span:nth-child(3)::after {
+      display: none;
+    }
+    
+    .outer .left span::before {
+      content: "";
+      width: 96px;
+      height: 2px;
+      position: absolute;
+      left: 10px;
+      bottom: 0;
+      background: #fff;
+    }
+    
+    .outer .left span:nth-child(4)::before,
+    .outer .left span:nth-child(5)::before {
+      display: none;
+    }
+    
+    .outer .left a {
+      line-height: 125px;
+    }
+    
+    .swiper-container {
+      width: 815px;
+      height: 250px;
+      float: right;
+      background-color: #000;
+      display: none;
+    }
+    
+    .swiper-container.active {
+      display: block;
+    }
+    
+    .swiper-pagination.page {
+      bottom: 14px;
+    }
+    
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    
+    .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+      width: 12px;
+      height: 12px;
+      background: url("./images/circle.png") no-repeat center center;
+    }
+    
+    .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      background: url("./images/circle1.png") no-repeat center center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="bxx">
+  <div class="sele">
+    <em></em>
+    <h2>优选商标 就选尚标</h2>
+  </div>
+  
+  <div class="outer">
+    <!--左侧导航栏-->
+    <div class="left">
+      <!--挖了个坑-->
+      <a target=_blank href="http://www.86sb.com/products/elitelist" class="more">查看更多</a>
+    </div>
+    
+    <!--轮播图-->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <!--挖了个坑-->
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination page"></div>
+    </div>
+    <div class="swiper-container swiper-no-swiping">
+      <div class="swiper-wrapper">
+        <!--挖了个坑-->
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination page"></div>
+    </div>
+    <div class="swiper-container swiper-no-swiping">
+      <div class="swiper-wrapper">
+        <!--挖了个坑-->
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination page"></div>
+    </div>
+    <div class="swiper-container swiper-no-swiping">
+      <div class="swiper-wrapper">
+        <!--挖了个坑-->
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination page"></div>
+    </div>
+    <div class="swiper-container swiper-no-swiping">
+      <div class="swiper-wrapper">
+        <!--挖了个坑-->
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination page"></div>
+    </div>
+  </div>
+</div>
+
+
+<script src="./lib/jquery.min.js"></script>
+<script src="./lib/swiper-3.4.2.jquery.min.js"></script>
+<script >
+  (function () {
+    $.ajax({
+      type: 'get',
+      url: 'http://www.86sb.com/index/get-ad?id=109',
+      dataType: "jsonp",
+      jsonp: 'callback',
+      success: function (data) {
+        console.log(data);
+        //类名渲染
+        var html = '';
+        var arr = data.class;
+        for (var i =0;i<arr.length;i++) {
+          html += '<span>第' + arr[i].split("|")[0] + '类</br>' + arr[i].split("|")[1] + '</span>';
+        }
+        $('.left .more').before(html);
+        
+        
+        //轮播渲染
+        var obj1 = data.data
+        window.onload = function () {
+          $('.left span').eq(0).click()
+        }
+        
+        
+        $('.left').on('click', 'span', function () {
+          var classid = $(this).text();
+          var idx = $(this).index()
+          var arr1 = []
+          for (var key in obj1) {
+            var key1 = '第'+key.split("|")[0]+'类'+key.split("|")[1]
+            if (key1 == classid) {
+              arr1.push(obj1[key])
+              console.log(arr1);
+            }
+          }
+          
+          var html1 = ''
+          for (var i = 0; i < arr1.length; i++) {
+            for(var key in arr1[i]){
+              console.log(arr1[i][key]);
+              html1 += '<a href='+arr1[i][key].link+' class="swiper-slide">' + '<img src=' + arr1[i][key].pic + '></a>'
+            }
+           
+          }
+          $('.swiper-wrapper').html(html1);
+          
+          $(this).addClass('active').siblings('span').removeClass('active')
+          $(this).parent('.left').siblings('.swiper-container').removeClass('active')
+          $(this).parent('.left').siblings('.swiper-container').eq(idx).addClass('active');
+        
+          
+          var mySwiper = new Swiper('.swiper-container', {
+            initialSlide: 0,
+            direction: 'horizontal',
+            autoplay: 3000,
+            loop: true,
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            autoplayDisableOnInteraction: false
+          })
+          
+          $('.swiper-container').mouseenter(function(){
+            for(var i = 0;i<mySwiper.length;i++){
+              mySwiper[i].stopAutoplay();
+            }
+          })
+  
+          $('.swiper-container').mouseleave(function(){
+            for(var i = 0;i<mySwiper.length;i++){
+              mySwiper[i].startAutoplay();
+            }
+          })
+
+          
+        })
+      }
+    })
+  })()
+  
+</script>
+
+</body>
+</html>

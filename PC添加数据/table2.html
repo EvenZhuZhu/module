@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Title</title>
+  <link rel="stylesheet" href="./base.css">
+</head>
+<style>
+  body {
+    font-size: 1.4rem;
+  }
+  
+  .outer {
+    margin: 0.1rem auto;
+    width: 90%;
+  }
+  
+  input[type='submit'] {
+    display: block;
+    margin: 0.1rem auto;
+    width: auto;
+    padding: 0 0.2rem;
+  }
+  
+  input {
+    margin: 0 auto;
+    width: 2.4rem;
+    height: 0.4rem;
+    border: 1px solid #ccc;
+  }
+  
+  select {
+    width: 1rem;
+    height: 0.4rem;
+    border: 1px solid #ccc;
+  }
+</style>
+<body>
+
+<div class="outer">
+  <select name="" id="">
+    <option value="移动"><a href="./table2.html">移动</a></option>
+    <option value="pc"><a href="./table1.html">pc</a></option>
+  </select>
+  
+  <!--添加-->
+  <div id="add">
+    <input type="text" id='url'>
+    <input type="number" id='num'>
+    <button id="addRow">添加</button>
+  </div>
+  
+  <!--列表-->
+  <form id="editForm" action="app/edit/destination" method='POST'>
+    <input type="submit" value="获取" id="sub">
+  </form>
+</div>
+
+<script src="./jquery.min.js"></script>
+<script>
+  var count = 0;
+  $('#addRow').on('click', function () {
+    if ($('#url').val() == '' || $('#num').val() == '') {
+      alert('请填写内容')
+      return false
+    } else {
+      //添加
+      count++
+      console.log(count);
+      var url = $('#url').clone()
+      url.removeAttr('id')
+      url.attr('disabled', 'true')
+      url.css({
+        'background': '#fff',
+        'border': '1px solid rgb(166, 159, 159)',
+      })
+      var num = $('#num').clone()
+      num.removeAttr('id')
+      num.attr('disabled', 'true')
+      num.css({
+        'margin-left': '0.4rem',
+        'background': '#fff',
+        'border': '1px solid rgb(166, 159, 159)',
+      })
+      var btn = $('#addRow').clone()
+      btn.removeAttr('id')
+      btn.css('margin-left', '0.4rem')
+      btn.text('删除')
+      $('#sub').before(url).before(num).before(btn)
+      $('#add #url').val('')
+      $('#add #num').val('')
+      //删除
+      btn.on('click', function () {
+        $(this).prev().prev().remove()
+        $(this).prev().remove()
+        $(this).remove()
+      })
+    }
+  })
+  
+  //选择pc或者移动
+  $('select').on('change', function () {
+    if ($(this).val() == '移动') {
+      $(window).attr('location', './table2.html')
+    } else {
+      $(window).attr('location', './table1.html')
+    }
+  })
+
+</script>
+</body>
+</html>
